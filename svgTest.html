@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<head>
+ 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+ 		<script src="svgTest.js"></script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="clickCtrl">
+				<div change-line>
+					<svg width="1000" height="500" style="background-color:white; border: solid 1px black;">
+						<polygon ng-repeat="shape in shapes" fill="{{shape.color}}" stroke="black" stroke-width="{{shape.stroke_width}}" id="shape{{shape.id}}" ng-click="shapeClick(shape.id)" ng-attr-points="{{shape.points}}" />
+				 	</svg>
+				 </div>
+			</div>
+		</div>
+	</body>
+</html>
